@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import User from "./User";
 import Admin from "./Admin";
-
+import "./style.css";
 const mockEmployees = [
   {
     id: 0,
@@ -29,11 +29,11 @@ const Home = () => {
   const [employees, setEmployees] = useState(mockEmployees);
   useEffect(() => {}, [sector, mockEmployees]);
   return (
-    <>
+    <div className="contentContainer">
       <h1>
         Generation Thailand
         <br />
-        React - Assessment
+        {sector === "admin" ? "Home - Admin Sector" : sector === "user" ? "Home - User Sector" : "React - Assessment"}
       </h1>
       <div className="buttonContainer">
         <button
@@ -49,10 +49,10 @@ const Home = () => {
           Admin Home Selector
         </button>
         <br />
-        {sector === "user" && <User employees={employees} />}
-        {sector === "admin" && <Admin employees={employees} setEmployees={setEmployees} />}
       </div>
-    </>
+      {sector === "user" && <User employees={employees} />}
+      {sector === "admin" && <Admin employees={employees} setEmployees={setEmployees} />}
+    </div>
   );
 };
 

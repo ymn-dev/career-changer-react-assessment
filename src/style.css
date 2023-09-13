@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonContainer button {
+  box-shadow: 0 3px 2px gray;
+  border: none;
+  border-radius: 7px;
+  padding: 15px;
+  margin: 50px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+}
+table {
+  width: 600px;
+}
+.link-style {
+  font-size: 60px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid black;
+}
+#employeeDelete {
+  color: red;
+}
+#employeeSave {
+  background-color: #5e5bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 40px;
+}
+#tableDelete {
+  font-weight: bold;
+  padding: 10px 20px;
+  position: relative;
+  top: 20px;
+  left: 550px;
+}
+.adminH2 {
+  position: relative;
+  right: 370px;
+}
+
+.ownerContainer {
+  width: 70%;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

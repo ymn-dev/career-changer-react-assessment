@@ -21,7 +21,7 @@ const Admin = (props) => {
 
   return (
     <>
-      <h2>Create User Here</h2>
+      <h2 className="adminH2">Create User Here</h2>
       <form onSubmit={submitHandle}>
         <label htmlFor="id">ID</label>
         <input
@@ -63,7 +63,10 @@ const Admin = (props) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />
-        <button type="submit">Save</button>
+        <button type="submit" id="employeeSave">
+          Save
+        </button>
+        <br />
       </form>
       <table>
         <thead>
@@ -83,13 +86,22 @@ const Admin = (props) => {
                 <td>{employee.lastname}</td>
                 <td>{employee.position}</td>
                 <td>
-                  <button onClick={() => deleteHandle(employee.id)}>Delete</button>
+                  <button id="employeeDelete" onClick={() => deleteHandle(employee.id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <button
+        onClick={() => {
+          setEmployees([]);
+        }}
+        id="tableDelete">
+        Delete
+      </button>
     </>
   );
 };

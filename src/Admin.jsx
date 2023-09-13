@@ -39,7 +39,7 @@ const Admin = (props) => {
           name="name"
           id="name"
           placeholder="Name"
-          onChange={(ev) => {
+          onSubmit={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />
@@ -49,7 +49,7 @@ const Admin = (props) => {
           name="lastname"
           id="lastname"
           placeholder="Last Name"
-          onChange={(ev) => {
+          onSubmit={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />
@@ -59,7 +59,7 @@ const Admin = (props) => {
           name="position"
           id="position"
           placeholder="Position"
-          onChange={(ev) => {
+          onSubmit={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />

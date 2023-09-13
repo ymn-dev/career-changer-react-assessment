@@ -29,7 +29,7 @@ const Home = () => {
   const [employees, setEmployees] = useState(mockEmployees);
   //just for auto gen id, start at 3 because last id was '2'
   const [id, setId] = useState(3);
-  useEffect(() => {}, [sector, mockEmployees]);
+  useEffect(() => {}, [sector, employees]);
   return (
     <div className="contentContainer">
       <h1>

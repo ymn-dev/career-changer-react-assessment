@@ -14,6 +14,11 @@ const Admin = (props) => {
     setEmployees([...employees, newEmployee]);
   };
 
+  const deleteHandle = (id) => {
+    const updatedList = employees.filter((employee) => id !== employee.id);
+    setEmployees(updatedList);
+  };
+
   return (
     <>
       <h2>Create User Here</h2>
@@ -66,6 +71,7 @@ const Admin = (props) => {
             <th>Name</th>
             <th>Last Name</th>
             <th>Position</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -76,6 +82,9 @@ const Admin = (props) => {
                 <td>{employee.name}</td>
                 <td>{employee.lastname}</td>
                 <td>{employee.position}</td>
+                <td>
+                  <button onClick={() => deleteHandle(employee.id)}>Delete</button>
+                </td>
               </tr>
             );
           })}

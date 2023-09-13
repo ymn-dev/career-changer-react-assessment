@@ -10,7 +10,6 @@ const Admin = (props) => {
   });
   const submitHandle = (event) => {
     event.preventDefault();
-    if (userData.id === "" || userData.name === "" || userData.lastname === "" || userData.position === "") return;
     const newEmployee = userData;
     setEmployees([...employees, newEmployee]);
   };
@@ -18,15 +17,47 @@ const Admin = (props) => {
   return (
     <>
       <h2>Create User Here</h2>
-      <form>
+      <form onSubmit={submitHandle}>
         <label htmlFor="id">ID</label>
-        <input type="text" name="id" id="id" />
+        <input
+          required
+          type="text"
+          name="id"
+          id="id"
+          onChange={(ev) => {
+            setUserData({ ...userData, [ev.target.name]: ev.target.value });
+          }}
+        />
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input
+          required
+          type="text"
+          name="name"
+          id="name"
+          onChange={(ev) => {
+            setUserData({ ...userData, [ev.target.name]: ev.target.value });
+          }}
+        />
         <label htmlFor="lastname">Last Name</label>
-        <input type="text" name="lastname" id="lastname" />
+        <input
+          required
+          type="text"
+          name="lastname"
+          id="lastname"
+          onChange={(ev) => {
+            setUserData({ ...userData, [ev.target.name]: ev.target.value });
+          }}
+        />
         <label htmlFor="position">Position</label>
-        <input type="text" name="position" id="position" />
+        <input
+          required
+          type="text"
+          name="position"
+          id="position"
+          onChange={(ev) => {
+            setUserData({ ...userData, [ev.target.name]: ev.target.value });
+          }}
+        />
         <button type="submit">Save</button>
       </form>
       <table>

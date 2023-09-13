@@ -27,6 +27,8 @@ const mockEmployees = [
 const Home = () => {
   const [sector, setSector] = useState("guest");
   const [employees, setEmployees] = useState(mockEmployees);
+  //just for auto gen id, start at 3 because last id was '2'
+  const [id, setId] = useState(3);
   useEffect(() => {}, [sector, mockEmployees]);
   return (
     <div className="contentContainer">
@@ -51,7 +53,7 @@ const Home = () => {
         <br />
       </div>
       {sector === "user" && <User employees={employees} />}
-      {sector === "admin" && <Admin employees={employees} setEmployees={setEmployees} />}
+      {sector === "admin" && <Admin employees={employees} setEmployees={setEmployees} id={id} setId={setId} />}
     </div>
   );
 };

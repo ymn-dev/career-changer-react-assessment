@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 const Admin = (props) => {
-  const { employees, setEmployees } = props;
+  const { employees, setEmployees, id, setId } = props;
   const [userData, setUserData] = useState({
     id: "",
     name: "",
@@ -10,8 +10,9 @@ const Admin = (props) => {
   });
   const submitHandle = (event) => {
     event.preventDefault();
-    const newEmployee = userData;
+    const newEmployee = { ...userData, id: id };
     setEmployees([...employees, newEmployee]);
+    setId((previousId) => previousId + 1);
   };
 
   const deleteHandle = (id) => {
@@ -23,8 +24,7 @@ const Admin = (props) => {
     <>
       <h2 className="adminH2">Create User Here</h2>
       <form onSubmit={submitHandle}>
-        <label htmlFor="id">ID</label>
-        <input
+        {/* <input
           required
           type="text"
           name="id"
@@ -32,33 +32,33 @@ const Admin = (props) => {
           onChange={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
-        />
-        <label htmlFor="name">Name</label>
+        /> */}
         <input
           required
           type="text"
           name="name"
           id="name"
+          placeholder="Name"
           onChange={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />
-        <label htmlFor="lastname">Last Name</label>
         <input
           required
           type="text"
           name="lastname"
           id="lastname"
+          placeholder="Last Name"
           onChange={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}
         />
-        <label htmlFor="position">Position</label>
         <input
           required
           type="text"
           name="position"
           id="position"
+          placeholder="Position"
           onChange={(ev) => {
             setUserData({ ...userData, [ev.target.name]: ev.target.value });
           }}

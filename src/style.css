@@ -9,6 +9,13 @@
   justify-content: center;
   align-items: center;
 }
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
 .buttonContainer button {
   box-shadow: 0 3px 2px gray;
   border: none;
@@ -24,12 +31,6 @@ h1 {
 table {
   width: 600px;
 }
-.link-style {
-  font-size: 60px;
-  list-style-type: none;
-  text-decoration: none;
-}
-
 table {
   border-collapse: collapse;
   width: 70%;
